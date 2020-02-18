@@ -1,3 +1,3 @@
-void vista(){
+void modelo(){
     
 }
