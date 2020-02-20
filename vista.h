@@ -4,7 +4,6 @@ void vista(int *subsN, int *subsH, float *deltha, float *fin )
 	printf("Bienvenido al sistema de prediccion\n");
 	printf("------------------------------------\n");
 	printf("    Pulsa enter para comenzar\n");
-	//scanf("%d", &i);
 	printf("Inserta tus condiciones iniciales para cada plataforma\n\n");
 	printf("Netflix N(0):  ");
 	scanf("%d", subsN);
