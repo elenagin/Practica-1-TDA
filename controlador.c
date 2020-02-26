@@ -1,38 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "modelo.h"
 #include "vista.h"
 
-
 int main()
 {
     FILE *archivo;
-    archivo = fopen("Graf.dat","wt");
+    archivo = fopen("Netflix.dat", "wt");
     FILE *archivo1;
-    archivo1 = fopen("Graf1.dat","wt");
-    int subsN, subsH; 
-    float deltha, fin, Nn, Hn, i;
-    system("clear");
+    archivo1 = fopen("Hulu.dat", "wt");
+    int c1_netflix, c2_netflix, c3_netflix, c4_netflix, c5_netflix;
+    int c1_hulu, c2_hulu, c3_hulu, c4_hulu, c5_hulu;
+    float delta, i;
+    long max;
 
-    vista(&subsN, &subsH, &deltha, &fin);
-    Nn= subsN;
-	Hn= subsH;
+    vista(&c1_netflix, &c2_netflix, &c3_netflix, &c4_netflix, &c5_netflix,
+          &c1_hulu, &c2_hulu, &c3_hulu, &c4_hulu, &c5_hulu, &delta, &max);
 
-    for(i=deltha ; i<= fin ; i=i+ deltha)
-	{
-        modelo(&subsN, &subsH, &deltha, &fin, &Nn, &Hn);
-        printf(" %f       %f\n\n", Nn, Hn);
-        fprintf(archivo," %f\t%f\n", i,Nn);
-        fprintf(archivo1," %f\t%f\n", i,Hn);
+    for (i = delta; i <= max; i = i + delta)
+    {
+        modelo(&delta, &max);
+        //printf(" %f       %f\n\n", Nn, Hn);
+        //fprintf(archivo, " %f\t%f\n", i, Nn);
+        //fprintf(archivo1, " %f\t%f\n", i, Hn);
     }
 
-
     getchar();
-  
+
     fclose(archivo);
     fclose(archivo1);
     return 0;
-    
 }
