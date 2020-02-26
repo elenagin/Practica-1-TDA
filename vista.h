@@ -1,7 +1,6 @@
 #include <stdlib.h>
 
-void vista(float *c1_netflix, float *c2_netflix, float *c3_netflix, float *c4_netflix, float *c5_netflix,
-		   float *c1_hulu, float *c2_hulu, float *c3_hulu, float *c4_hulu, float *c5_hulu, float *delta, long *max)
+void vista(float *c1_netflix, float *c1_hulu, float *delta, long *max, float *u_cuatro_prima)
 {
 	int i;
 	system("clear");
@@ -15,34 +14,18 @@ void vista(float *c1_netflix, float *c2_netflix, float *c3_netflix, float *c4_ne
 	getchar();
 	system("clear");
 	printf("Inserta tus condiciones iniciales para cada plataforma\n\n");
-	printf("\nN E T F L I X\nCondición 1: ");
+	printf("\nN E T F L I X\nInserte la población inicial: ");
 	scanf(" %f", c1_netflix);
-	printf("Condición 2: ");
-	scanf(" %f", c2_netflix);
-	printf("Condición 3: ");
-	scanf(" %f", c3_netflix);
-	printf("Condición 4: ");
-	scanf(" %f", c4_netflix);
-	printf("Condición 5: ");
-	scanf(" %f", c5_netflix);
 	getchar();
 	system("clear");
-	printf("H U L U\nCondición 1: ");
+	printf("H U L U\nInserte la población inicial: ");
 	scanf(" %f", c1_hulu);
-	printf("Condición 2: ");
-	scanf(" %f", c2_hulu);
-	printf("Condición 3: ");
-	scanf(" %f", c3_hulu);
-	printf("Condición 4: ");
-	scanf(" %f", c4_hulu);
-	printf("Condición 5: ");
-	scanf(" %f", c5_hulu);
 	printf("Presione enter para continuar\n");
 	getchar();
 	system("clear");
 	printf("Inserte ∆t: ");
 	scanf(" %f", delta);
-	printf("Inserte la población máxima: ");
+	printf("Inserte el año limite: ");
 	scanf(" %ld", max);
 	system("clear");
 }
