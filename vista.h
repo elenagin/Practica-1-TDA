@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-void vista(float *c1_netflix, float *c1_hulu, float *delta, long *max, float *u_cuatro_prima)
+void vista(float *c1_netflix, float *c1_hulu, float *delta, long *max)
 {
 	int i;
 	system("clear");
@@ -25,7 +25,7 @@ void vista(float *c1_netflix, float *c1_hulu, float *delta, long *max, float *u_
 	system("clear");
 	printf("Inserte ∆t: ");
 	scanf(" %f", delta);
-	printf("Inserte el año limite: ");
+	printf("Inserte el año límite: ");
 	scanf(" %ld", max);
 	system("clear");
 }

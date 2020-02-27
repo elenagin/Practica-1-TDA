@@ -11,17 +11,17 @@ int main()
     archivo2 = fopen("Hulu.dat", "wt");
     float c1_netflix, c2_netflix, c3_netflix, c4_netflix, c5_netflix;
     float c1_hulu, c2_hulu, c3_hulu, c4_hulu, c5_hulu, u_cuatro_prima;
-    float delta, i;
+    float delta, i, Nn, Hn;
     long max;
 
-    vista(&c1_netflix, &c1_hulu, &delta, &max, &u_cuatro_prima);
+    vista(&c1_netflix, &c1_hulu, &delta, &max);
 
     for (i = delta; i <= max; i = i + delta)
     {
-        modelo(&delta, &max);
-        //printf(" %f       %f\n\n", Nn, Hn);
-        fprintf(archivo1, " %f\t%f\n", i, u_cuatro_prima);
-        //fprintf(archivo2, " %f\t%f\n", i, c1_hulu);
+        modelo(&delta, &max, &c1_netflix, &c1_hulu);
+        printf(" %f       %f\n\n", Nn, Hn);
+        fprintf(archivo1, " %f\t%f\n", i, Nn);
+        fprintf(archivo2, " %f\t%f\n", i, Hn);
     }
 
     getchar();
