@@ -1,32 +1,43 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "modelo.h"
 #include "vista.h"
 
+
 int main()
 {
-    FILE *archivo1, *archivo2;
-    archivo1 = fopen("Netflix.dat", "wt");
-    archivo2 = fopen("Hulu.dat", "wt");
-    float c1_netflix, c2_netflix, c3_netflix, c4_netflix, c5_netflix;
-    float c1_hulu, c2_hulu, c3_hulu, c4_hulu, c5_hulu, u_cuatro_prima;
-    float delta, i, Nn, Hn;
-    long max;
+    FILE *archivo;
+    archivo = fopen("Netflix.dat","wt");
+    FILE *archivo1;
+    archivo1 = fopen("Hulu.dat","wt");
+    float subsN, subsH; 
+    float deltha, fin, Nn, Hn, i;
+    float pob_max = 6 * pow(10, 9);
+    system("clear");
 
-    vista(&c1_netflix, &c1_hulu, &delta, &max);
+    vista(&subsN, &subsH, &deltha, &fin);
+    Nn= subsN;
+	Hn= subsH;
 
-    for (i = delta; i <= max; i = i + delta)
-    {
-        modelo(&delta, &max, &c1_netflix, &c1_hulu);
+    for(i=deltha ; i<= fin ; i=i+ deltha)
+	{
+        modelo(&deltha, &fin, &Nn, &Hn);
         printf(" %f       %f\n\n", Nn, Hn);
-        fprintf(archivo1, " %f\t%f\n", i, Nn);
-        fprintf(archivo2, " %f\t%f\n", i, Hn);
+        fprintf(archivo," %f\t%f\n", i,Nn);
+        fprintf(archivo1," %f\t%f\n", i,Hn);
+        if(Nn >= pob_max && Hn >= pob_max)
+        {
+            break;  
+		}
     }
 
-    getchar();
 
+    getchar();
+  
+    fclose(archivo);
     fclose(archivo1);
-    fclose(archivo2);
     return 0;
+    
 }
